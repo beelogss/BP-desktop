@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+body {
+    font-family: 'Poppins';
+    background-color: #f7f7f7;
+    color: #455e14;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #e5eeda;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 1px;
+    color: #455e14;
+    font-weight: 600;
+}
+
+h2, p {
+    display: inline-block;
+}
+
+.back-to-dashboard {
+    color: #455e14;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.back-to-dashboard:hover {
+    text-decoration: underline;
+    background-color: #bdd299;
+    color: white;
+}
+
+.ManageUser {
+    display: flex;
+    width: 130px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px auto 0 auto;
+    border-radius: 5px;
+    border-color: #acacac;
+    background-color: white;
+    color: #455e14;
+    font-weight: bold;
+    vertical-align: middle;
+    /* Add this line to align the button vertically */
+}
+
+.ManageUser:hover {
+    color: white;
+    background-color: #83951c;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar input {
+    width: 70%;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-bar button {
+    width: 20%;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #3e8e41;
+  }
+
+
+h2 {
+    padding: 5px 15px;
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    border-radius: 5px;
+    border-color: #acacac;
+    background-color: #e5eeda;
+    color: #455e14;
+    font-weight: bold;
+    vertical-align: middle;
+    /* Add this line to align the button vertically */
+}
+
+h2, p {
+    display: inline-block;
+}
+
+h3 {
+    color: #455e14;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+form#userForm {
+    margin-bottom: 30px;
+}
+
+form#userForm .form-group {
+    margin-bottom: 15px;
+}
+
+form#userForm label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #455e14;
+}
+
+form#userForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form#userForm button {
+    background-color: #83951c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form#userForm button:hover {
+    background-color: #bdd299;
+}
+
+table#userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+table#userTable th,
+table#userTable td {
+    padding: 12px;
+    border: 1px solid #bdd299;
+    text-align: left;
+    color: black;
+}
+
+table#userTable th {
+    background-color: #83951c;
+    color: white;
+    text-align: center;
+}
+
+table#userTable td button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table#userTable td button:first-of-type {
+    color: black;
+    background-color: #b4e639;
+    margin-bottom: 3px;
+    width: 80px;
+    font-size: 13px;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+table#userTable td button:last-of-type {
+    background-color: #8abf2c;
+    width: 80px;
+    font-size: 13px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    color: white;
+}
+
+/* Hover effect */
+table#userTable td button:first-of-type:hover {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+table#userTable td button:last-of-type:hover {
+    background-color: #E74C3C;
+    /* Red */
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+/* Ensure text alignment within table cells */
+table#userTable td {
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    form#userForm input {
+        font-size: 14px;
+    }
+
+    table#userTable th,
+    table#userTable td {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redemption Rewards</title>
+    <link rel="stylesheet" href="assets/RedemptionRewards.css">
+    <script src="https://kit.fontawesome.com/3980f875bb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-content">
+        <a href="dashboard.html" class="back-to-dashboard">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Rewards Inventory</h2>
+
+        <div class="rewards-grid">
+            <!-- Ballpen Card -->
+            <div class="reward-card">
+                <img src="assets/ballpen.jpg" alt="Ballpen">
+                <h3>Ballpen</h3>
+                <input type="number" value="10" id="ballpenStock">
+                <button onclick="saveStock('ballpenStock')">Save</button>
+            </div>
+
+            <!-- Notebook Card -->
+            <div class="reward-card">
+                <img src="assets/notebook.jpg" alt="Notebook">
+                <h3>Notebook</h3>
+                <input type="number" value="20" id="notebookStock">
+                <button onclick="saveStock('notebookStock')">Save</button>
+            </div>
+
+            <!-- Yellow Paper Card -->
+            <div class="reward-card">
+                <img src="assets/yellowpaper.jpg" alt="Yellow Paper">
+                <h3>Yellow Paper</h3>
+                <input type="number" value="30" id="yellowPaperStock">
+                <button onclick="saveStock('yellowPaperStock')">Save</button>
+            </div>
+
+            <!-- Short Bondpaper Card -->
+            <div class="reward-card">
+                <img src="assets/shortbondpaper.jpg" alt="Short Bondpaper">
+                <h3>Short Bondpaper</h3>
+                <input type="number" value="40" id="shortBondpaperStock">
+                <button onclick="saveStock('shortBondpaperStock')">Save</button>
+            </div>
+
+            <!-- Long Bondpaper Card -->
+            <div class="reward-card">
+                <img src="assets/longbondpaper.jpg" alt="Long Bondpaper">
+                <h3>Long Bondpaper</h3>
+                <input type="number" value="50" id="longBondpaperStock">
+                <button onclick="saveStock('longBondpaperStock')">Save</button>
+            </div>
+
+            <!-- White Board Marker Card -->
+            <div class="reward-card">
+                <img src="assets/whiteboardmarker.jpg" alt="White Board Marker">
+                <h3>White Board Marker</h3>
+                <input type="number" value="15" id="whiteboardMarkerStock">
+                <button onclick="saveStock('whiteboardMarkerStock')">Save</button>
+            </div>
+
+            <!-- Permanent Marker Card -->
+            <div class="reward-card">
+                <img src="assets/permanentmarker.jpg" alt="Permanent Marker">
+                <h3>Permanent Marker</h3>
+                <input type="number" value="25" id="permanentMarkerStock">
+                <button onclick="saveStock('permanentMarkerStock')">Save</button>
+            </div>
+
+            <!-- Short Folder Card -->
+            <div class="reward-card">
+                <img src="assets/shortfolder.jpg" alt="Short Folder">
+                <h3>Short Folder</h3>
+                <input type="number" value="35" id="shortFolderStock">
+                <button onclick="saveStock('shortFolderStock')">Save</button>
+            </div>
+
+            <!-- Long Folder Card -->
+            <div class="reward-card">
+                <img src="assets/longfolder.jpg" alt="Long Folder">
+                <h3>Long Folder</h3>
+                <input type="number" value="45" id="longFolderStock">
+                <button onclick="saveStock('longFolderStock')">Save</button>
+            </div>
+        </div>
+
+        <script>
+            function saveStock(stockId) {
+                const stockInput = document.getElementById(stockId);
+                const stockValue = stockInput.value;
+                localStorage.setItem(stockId, stockValue);
+
+                alert('Saved! New stock for ' + stockId.replace('Stock', '').replace(/([a-z])([A-Z])/g, '$1 $2') + ' is: ' + stockValue);
+            }
+
+            // Load saved stocks on page load
+            window.onload = function() {
+                const stockIds = [
+                    'ballpenStock',
+                    'notebookStock',
+                    'yellowPaperStock',
+                    'shortBondpaperStock',
+                    'longBondpaperStock',
+                    'whiteboardMarkerStock',
+                    'permanentMarkerStock',
+                    'shortFolderStock',
+                    'longFolderStock'
+                ];
+
+                stockIds.forEach(id => {
+                    const savedStock = localStorage.getItem(id);
+                    if (savedStock !== null) {
+                        document.getElementById(id).value = savedStock;
+                    }
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

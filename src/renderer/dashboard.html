@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Board</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+    <script src="https://kit.fontawesome.com/3980f875bb.js" crossorigin="anonymous"></script>
+    <script src="assets/manage-user.js" defer></script>
+</head>
+
+<body>
+    <div class="topbar">
+        <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+    </div>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+            <h2>&nbsp;&nbsp;Dashboard</h2>
+            <a href="dashboard.html"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;&nbsp;Home</a>
+            <a href="Manageuser.html"><i class="fa-solid fa-users-line"></i>&nbsp;&nbsp;&nbsp;Manage User</a>
+            <a href="leaderboard.html"><i class="fa-solid fa-gear"></i>&nbsp;&nbsp;&nbsp;Leader Board</a>
+            <a href="PointsAllocation.html"><i class="fa-solid fa-coins"></i>&nbsp;&nbsp;&nbsp;Points Allocation</a>
+            <a href="RedemptionRewards.html"><i class="fa-solid fa-gift"></i>&nbsp;&nbsp;&nbsp;Redemption Rewards</a>
+            <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+        </div>
+
+               <!-- Grid layout for content -->
+        <div class="grid-container">
+            <!-- Three boxes at the top -->
+            <div class="grid-item box1">Box 1</div>
+            <div class="grid-item box2">Box 2</div>
+            <div class="grid-item box3">Box 3</div>
+
+            <!-- Two boxes below, one spanning two columns -->
+            <div class="grid-item full">Box 4 (Full Width)</div>
+            <div class="grid-item wide">Box 5 (Wide)</div>
+         </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

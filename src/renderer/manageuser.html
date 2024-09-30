@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="assets/manageuser.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <a href="dashboard.html" class="back-to-dashboard">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <!-- Add New User Button -->
+        <button class="ManageUser" onclick="location.href='NewUser.html'" style="float: right;">
+            Add New User
+        </button>
+
+        <h2>Manage Users</h2>
+        <!-- Add this code above the table -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search by name or student number">
+            <button id="search-button">Search</button>
+        </div>
+
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Student Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Collected Points</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Users will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Fetch users from the backend and display them in the table
+        function fetchUsers() {
+            fetch('http://localhost:3000/getUsers')
+                .then(response => response.json())
+                .then(users => {
+                    const tableBody = document.querySelector('#userTable tbody');
+                    tableBody.innerHTML = ''; // Clear table before adding rows
+                    users.forEach(user => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${user.student_number}</td>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>${user.collected_points}</td>
+                            <td>
+                                <button onclick="editUser(${user.id})">Edit</button>
+                                <button onclick="deleteUser(${user.id})">Delete</button>
+                            </td>
+                            `;
+                        // Add this code after the fetchUsers function
+                        const searchInput = document.getElementById('search-input');
+                        const searchButton = document.getElementById('search-button');
+                        const userTable = document.getElementById('userTable');
+
+                        searchButton.addEventListener('click', () => {
+                            const searchTerm = searchInput.value.toLowerCase();
+                            const rows = userTable.rows;
+
+                            for (let i = 1; i < rows.length; i++) {
+                                const row = rows[i];
+                                const cells = row.cells;
+                                const nameCell = cells[1].textContent.toLowerCase();
+                                const studentNumberCell = cells[0].textContent.toLowerCase();
+
+                                if (nameCell.includes(searchTerm) || studentNumberCell.includes(searchTerm)) {
+                                    row.style.display = '';
+                                } else {
+                                    row.style.display = 'none';
+                                }
+                            }
+                        });
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching users:', error));
+        }
+
+        // Delete user
+        function deleteUser(id) {
+            fetch(`http://localhost:3000/deleteUser/${id}`, {
+                method: 'DELETE'
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('User deleted successfully');
+                        fetchUsers(); // Refresh the table
+                    } else {
+                        alert('Error deleting user');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Edit user
+        function editUser(id) {
+            window.location.href = `EditUser.html?id=${id}`;
+        }
+
+        // Load users on page load
+        document.addEventListener('DOMContentLoaded', fetchUsers);
+    </script>
+</body>
+
+</html>

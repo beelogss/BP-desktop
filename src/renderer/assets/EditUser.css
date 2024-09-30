@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: whitesmoke;
+    color: #455e14;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #455e14;
+    margin-bottom: 20px;
+}
+
+/* Main content container */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #e5eeda;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Back button */
+.back-to-dashboard {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #455e14;
+    text-decoration: none;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.back-to-dashboard:hover {
+    color: #83981c;
+}
+
+/* Form Styles */
+form#editUserForm {
+    background-color: whitesmoke;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+form#editUserForm label {
+    font-weight: bold;
+    color: #455e14;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 16px;
+}
+
+form#editUserForm input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 41px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Focus state for input fields */
+form#editUserForm input:focus {
+    border-color: #455e14;
+    background-color: white;
+    outline: none;
+}
+
+/* Button styling */
+form#editUserForm button {
+    padding: 12px 20px;
+    background-color: #455e14;
+    color: white;
+    border: none;
+    border-radius: 41px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+form#editUserForm button:hover {
+    background-color: #5a7e1e;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    form#editUserForm input {
+        padding: 10px;
+    }
+
+    form#editUserForm button {
+        padding: 10px 16px;
+    }
+}
