@@ -14,6 +14,11 @@ h2 {
     margin-bottom: 20px;
 }
 
+h2, p {
+    display: inline-block;
+    margin-top: 0%;
+}
+
 /* Main content container */
 .main-content {
     max-width: 800px;
@@ -27,18 +32,18 @@ h2 {
 /* Back button */
 .back-to-dashboard {
     display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px;
     color: #455e14;
     text-decoration: none;
-    font-size: 18px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
 .back-to-dashboard:hover {
-    color: #83981c;
+     text-decoration: underline;
+    background-color: #e5eeda;
+    color: white;
 }
 
 /* Form Styles */
@@ -91,7 +96,7 @@ form#editUserForm button {
 }
 
 form#editUserForm button:hover {
-    background-color: #5a7e1e;
+    background-color: #e5eeda;
 }
 
 /* Responsive Styles */

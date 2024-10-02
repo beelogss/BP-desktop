@@ -12,6 +12,11 @@ body {
   text-decoration: none;
 }
 
+h2, p {
+    display: inline-block;
+    margin-top: 0%;
+}
+
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -33,7 +38,7 @@ body {
 
 .back-to-dashboard:hover {
     text-decoration: underline;
-    background-color: #bdd299;
+    background-color: #e5eeda;
     color: white;
 }
 
@@ -89,7 +94,7 @@ form#addUserForm button {
 }
 
 form#addUserForm button:hover {
-    background-color: #83951c;
+    background-color: #e5eeda;
     color: white;
 }
 

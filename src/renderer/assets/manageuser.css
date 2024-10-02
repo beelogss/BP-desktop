@@ -2,8 +2,7 @@
 
 body {
     font-family: 'Poppins';
-    background-color: #f7f7f7;
-    color: #455e14;
+    background-color: whitesmoke;
     margin: 0;
     padding: 20px;
 }
@@ -11,118 +10,107 @@ body {
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #e5eeda;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    margin-top: 1px;
-    color: #455e14;
-    font-weight: 600;
-}
-
-h2, p {
-    display: inline-block;
-}
-
 .back-to-dashboard {
+    display: inline-block;
     color: #455e14;
     text-decoration: none;
     font-size: 16px;
     margin-bottom: 20px;
-    display: inline-block;
     padding: 10px 15px;
     border-radius: 5px;
 }
 
 .back-to-dashboard:hover {
     text-decoration: underline;
-    background-color: #bdd299;
+    background-color: #e5eeda;
     color: white;
 }
 
-.ManageUser {
+
+.search-bar {
     display: flex;
-    width: 130px;
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    font-family: 'Poppins';
+    border-color: #7a9b57;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar button {
+    width: 11%;
     height: 40px;
-    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #bdd299;
+    color: #455e14;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    text-align: center;
     justify-content: center;
+    align-items: center;
+
+}
+
+.search-bar button:hover {
+    background-color: #e5eeda;
+    color: #455e14;
+}
+
+button.NewUser {
+    width: 150px;
+    height: 40px;
     font-family: 'Poppins';
     font-size: 13px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 5px auto 0 auto;
+    border-radius: 5px;
+    border-color: #acacac;
+    background-color: white;
+    color: #455e14;
+    background-color: #BDD299;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+button.NewUser:hover {
+    background-color: #e5eeda;
+    color: #455e14;
+}
+
+h2 {
+    padding: 5px 15px;
+    width: 400px;
+    font-family: 'Poppins';
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     border-radius: 5px;
     border-color: #acacac;
     background-color: white;
     color: #455e14;
     font-weight: bold;
-    vertical-align: middle;
+    margin-top: 1px;
+    font-weight: 600;
     /* Add this line to align the button vertically */
 }
 
-.ManageUser:hover {
-    color: white;
-    background-color: #83951c;
-}
-
-.search-bar {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-bar input {
-    width: 70%;
-    height: 30px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-  }
-  
-  .search-bar button {
-    width: 20%;
-    height: 30px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .search-bar button:hover {
-    background-color: #3e8e41;
-  }
-
-
-h2 {
-    padding: 5px 15px;
-    display: flex;
-    width: 400px;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins';
-    font-size: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0 auto;
-    border-radius: 5px;
-    border-color: #acacac;
-    background-color: #e5eeda;
-    color: #455e14;
-    font-weight: bold;
-    vertical-align: middle;
-    /* Add this line to align the button vertically */
-}
-
-h2, p {
+.main-content h2, .back-to-dashboard{
     display: inline-block;
 }
 
@@ -166,7 +154,7 @@ form#userForm button {
 }
 
 form#userForm button:hover {
-    background-color: #bdd299;
+    background-color: #e5eeda;
 }
 
 table#userTable {
@@ -185,7 +173,7 @@ table#userTable td {
 }
 
 table#userTable th {
-    background-color: #83951c;
+    background-color: #7a9b57;
     color: white;
     text-align: center;
 }
@@ -218,7 +206,7 @@ table#userTable td button:last-of-type {
 
 /* Hover effect */
 table#userTable td button:first-of-type:hover {
-    background-color: #4CAF50;
+    background-color: #bdd299;
     /* Green */
     color: white;
     font-family: 'Poppins';
