@@ -33,7 +33,6 @@ body {
     color: white;
 }
 
-
 .search-bar {
     display: flex;
 }
@@ -204,6 +203,7 @@ table#userTable td button:last-of-type {
     color: white;
 }
 
+
 table#userTable td button:first-of-type:hover {
     background-color: #bdd299;
     color: white;
@@ -213,7 +213,6 @@ table#userTable td button:first-of-type:hover {
 
 table#userTable td button:last-of-type:hover {
     background-color: #E74C3C;
-    /* Red */
     font-family: 'Poppins';
     font-weight: bold;
 }

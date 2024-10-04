@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BottlePoints</title>
+</head>
+<body>
+  
+<form class="newuser">
+    <label for="student_number">Student Number:</label>
+    <input type="text" id="student_number" name="student_number" maxlength="8" oninput="formatStudentNumber(this)" pattern="\d{2}-\d{5}" title="Enter a valid student number in the format YY-NNNNN (e.g., 21-00564)" required>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" title="Enter a valid email address" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" pattern="(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{8,}" title="Password must be at least 8 characters long, include a letter, a number, and a special character" required>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" id="confirm_password" name="confirm_password" required>
+    
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+<script>
+  const newuser = document.querySelector('.newuser');
+  const newuserInputs = newuser.querySelectorAll('input');
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirm_password');
+
+  newuser.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Check if passwords match
+      if (passwordInput.value !== confirmPasswordInput.value) {
+          alert('Passwords do not match. Please try again.');
+          return; // Prevent form submission if passwords don't match
+      }
+
+      const formData = new FormData(newuser);
+      const formValues = Object.fromEntries(formData.entries());
+
+      fetch('/auth/register', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formValues)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          alert(`Error: ${data.message}`);
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch(error => {
+        alert('An error occurred. Please try again.');
+        console.error('Error:', error);
+      });
+  });
+
+  function formatStudentNumber(input) {
+    // Get the current value
+    let value = input.value.replace(/\D/g, ''); // Remove non-digit characters
+    
+    // Insert hyphen after the 2nd digit
+    if (value.length > 2) {
+        value = value.slice(0, 2) + '-' + value.slice(2);
+    }
+
+    // Update the input value
+    input.value = value.slice(0, 8); // Limit to 8 characters in total
+  }
+  function validatePasswords() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+    
+    if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+  }
+  </script>
+
+<style>
+  .newuser {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+  }
+  input {
+    padding-block: 5px;
+  }
+  select {
+    padding-block: 5px;
+  }
+  </style>
+</html>

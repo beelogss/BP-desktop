@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Reward</title>
+</head>
+
+<body>
+    <div class="main-content">
+        <h2>Add New Reward</h2>
+        <form id="addRewardForm" enctype="multipart/form-data">
+            <label for="reward_name">Reward Name:</label>
+            <input type="text" id="reward_name" name="reward_name" required>
+
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock" name="stock" required>
+
+            <button type="submit">Add Reward</button>
+        </form>
+    </div>
+
+    <script>
+        const addRewardForm = document.getElementById('addRewardForm');
+        addRewardForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(addRewardForm);
+            const formValues = Object.fromEntries(formData.entries());
+            const response = await fetch('/addreward', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formValues)
+            });
+            const data = await response.json();
+            if (data.error) {
+                alert(data.error);
+            } else {
+                alert(data.message);
+            }
+        });
+
+    </script>
+
+    <style>
+        .main-content {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+    </style>
+
+</body>
+
+</html>

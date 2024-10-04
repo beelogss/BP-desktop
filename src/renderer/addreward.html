@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Reward</title>
+    <link rel="stylesheet" href="assets/Addreward.css">
+    <script src="https://kit.fontawesome.com/3980f875bb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-content">
+        <a href="RedemptionRewards.html" class="back-to-dashboard">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Add New Reward</h2>
+        <form id="addRewardForm" enctype="multipart/form-data">
+            <label for="reward_name">Reward Name:</label>
+            <input type="text" id="reward_name" name="reward_name" required>
+
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock" name="stock" required>
+
+            <label for="image">Reward Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit">Add Reward</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('addRewardForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('reward_name', document.getElementById('reward_name').value);
+            formData.append('stock', document.getElementById('stock').value);
+            formData.append('image', document.getElementById('image').files[0]);
+
+            fetch('http://localhost:3000/addreward', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.message);
+                document.getElementById('addRewardForm').reset(); 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while adding the reward. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

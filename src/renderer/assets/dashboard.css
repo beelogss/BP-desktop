@@ -8,6 +8,7 @@ body {
 }
 
 .container {
+    font-family: 'Poppins';
     display: flex;
     transition: margin-left 0.3s;
     background-color: white;
@@ -18,6 +19,7 @@ body {
 }
 
 .sidebar h2 {
+    font-family: 'Poppins';
     margin-top: 3px;
     border-bottom: 2px solid #143f17;
     padding-bottom: 10px;
@@ -59,6 +61,7 @@ body {
 }
 
 .main-content {
+    font-family: 'Poppins';
     max-width: 1200px;
     margin-left: 0;
     padding: 20px;
@@ -89,6 +92,7 @@ body {
 }
 
 .content {
+    font-family: 'Poppins';
     margin-top: 50px;
 }
 
@@ -96,7 +100,7 @@ body {
     flex-grow: 1;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     margin-top: 20px;
 }
@@ -109,9 +113,9 @@ body {
     border: 2px solid #455e14;
 }
 
-/* Two boxes at the bottom */
+
 .grid-container > .full {
-    grid-column: span 2; /* This box spans two columns */
+    grid-column: span 2;
 }
 
 .grid-container > .side {
@@ -128,11 +132,6 @@ body {
     border-color: #455e14;
     box-shadow: 0 0 5px 1px #acacac;
 }
-
-/* .box2 {
-    margin-left: 40px;
-    margin-right: 40px;
-} */
 
 .full {
     height : 300px;
@@ -151,4 +150,23 @@ body {
     border-color: #455e14;
     background-color: white;
     box-shadow: 0 0 5px 1px #acacac;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    form#userForm input {
+        font-size: 14px;
+    }
+
+    table#userTable th,
+    table#userTable td {
+        font-size: 14px;
+    }
 }

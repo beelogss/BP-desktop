@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+body {
+    font-family: 'Poppins';
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-content {
+    font-family: 'Poppins';
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-dashboard {
+    display: inline-block;
+    color: #455e14;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #83951c;
+    color: white;
+}
+
+.back-to-dashboard:hover {
+    background-color: #bdd299;
+    color: #455e14;
+}
+
+h2 {
+    font-size: 28px;
+    color: #455e14;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+}
+
+table#userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table#userTable th,
+table#userTable td {
+    padding: 12px;
+    border: 1px solid #bdd299;
+    text-align: left;
+    color: black;
+}
+
+table#userTable th {
+    background-color: #7a9b57;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.filter-options {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.filter-options label {
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+}
+
+.filter-options select {
+    padding: 5px;
+    border: 1px solid #7a9b57;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    background-color: white;
+    color: #455e14;
+}
+
+table#userTable td {
+    text-align: center;
+    color: black;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    table#userTable th,
+    table#userTable td {
+        font-size: 14px;
+    }
+}

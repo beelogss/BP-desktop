@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users</title>
-    <link rel="stylesheet" href="assets/manageuser.css">
+    <title>Points Allocation</title>
+    <link rel="stylesheet" href="assets/pointsallocation.css">
     <script src="https://kit.fontawesome.com/3980f875bb.js" crossorigin="anonymous"></script>
 
 <body>
@@ -14,15 +14,12 @@
             <i class="fa-solid fa-arrow-left"></i>
         </a>
 
-        <h2>Manage Users</h2>
+        <h2>Points Allocation</h2>
         
 
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search by full name or student number">
+                <input type="text" id="search-input" placeholder="Search by student number">
                 <button id="search-button">Search</button>
-                <button class="NewUser" onclick="location.href='NewUser.html'" >
-                    Add New User
-                </button>
             </div>
         
             <table id="userTable">
@@ -30,8 +27,8 @@
                     <tr>
                         <th>Student Number</th>
                         <th>Full Name</th>
-                        <th>Email</th>
-                        <th>Actions</th>
+                        <th>Collected Points</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +48,7 @@
                             row.innerHTML = `
                             <td>${user.student_number}</td>
                             <td>${user.name}</td>
-                            <td>${user.email}</td>
+                            <td>${user.collected_points}</td>
                             <td>
                                 <button onclick="editUser(${user.id})">Edit</button>
                                 <button onclick="deleteUser(${user.id})">Delete</button>
@@ -92,7 +89,7 @@
                     .then(data => {
                         if (data.success) {
                             alert('User deleted successfully');
-                            fetchUsers();
+                            fetchUsers(); 
                         } else {
                             alert('Error deleting user');
                         }

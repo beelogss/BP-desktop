@@ -3,28 +3,29 @@
 body {
     font-family: 'Poppins';
     background-color: whitesmoke;
-    color: #455e14;
+    margin: 0;
     padding: 20px;
 }
 
-.ManageUser, .ManageUser i {
-  color: #455e14;
-  text-decoration: none;
-}
-
-h2, p {
-    display: inline-block;
-    margin-top: 0%;
-}
-
 .main-content {
+    font-family: 'Poppins';
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #e5eeda;
-    padding: 30px;
+    background-color: white;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.ManageUser, .ManageUser i {
+    color: #455e14;
+    text-decoration: none;
+  }
+  
+  h2, p {
+      display: inline-block;
+      margin-top: 0%;
+  }
 
 .back-to-dashboard {
     display: inline-block;
@@ -38,7 +39,7 @@ h2, p {
 
 .back-to-dashboard:hover {
     text-decoration: underline;
-    background-color: #e5eeda;
+    background-color: #bdd299;
     color: white;
 }
 
@@ -82,20 +83,20 @@ form#addUserForm button {
     margin: 6px auto 0 auto;
     border-radius: 5px;
     border-color: #acacac;
-    background-color: white;
-    color: #455e14;
+    background-color: #83951c;
+    color: white;
     font-weight: bold;
 }
 
 #addUserForm input:focus {
-    border-color: #455e14; /* Green border on focus */
+    border-color: #455e14;
     background-color: white;
     outline: none;
 }
 
 form#addUserForm button:hover {
-    background-color: #e5eeda;
-    color: white;
+    background-color: #bdd299;
+    color: #455e14;
 }
 
 table#userTable {
